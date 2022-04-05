@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/login.css">
+
+    <title>gudang gilang</title>
+    <style>
+   body {
+            background-color: 	#FAEBD7;
+        }
+   table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 20px 0;
+            width: 100%;
+         }
+
+   td,
+   th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px 10px;
+      }
+
+   tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+    </style>
+
+  </head>
+  <body class="px-5">
+
+
+  <div class="logout">
+      <br>
+    <div class="d-flex justify-content-between">
+        Selamat datang, {{ username }}
+        <a class="btn btn-primary" id="btn-logout" href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <div class="container1">
+      <h4 class="text-center">HALAMAN UPDATE DATA</h4>
+
+  <form action="/update" method="post">
+
+        <!--form ID-->
+        <div class="form-group">
+          <label>ID Barang</label>
+          <input type="text" name="formID_barang" id="formID_barang" class="form-control" placeholder="Masukkan ID barang">
+
+        </div>
+        <!--form nama-->
+        <br>
+        <div class="form-group">
+          <label>Nama Barang</label>
+          <input type="text" name="formNama_barang" id="formNama_barang" class="form-control" placeholder="Masukkan nama barang">
+          <br>
+        </div>
+
+        <!--form harga-->
+        <div class="form-group">
+          <label>Harga Barang</label>
+          <input type="text" name="formHarga_barang" id="formHarga_barang" class="form-control" placeholder="Masukkan harga barang">
+          <br>
+        </div>
+
+      <!--form jumlah-->
+        <div class="form-group">
+          <label>Jumlah Barang</label>
+          <input type="text" name="formJumlah_barang" id="formJumlah_barang" class="form-control" placeholder="Masukkan jumlah barang">
+          <br>
+        </div>
+
+      <div class ="crud">
+
+        <button class="btn btn-primary" type ="submit" id="btn-insert">Update</button>
+          <a class="btn btn-primary" id ="btn-insert" href="http://127.0.0.1:5000/">Kembali</a>
+
+      </div>
+
+  </form>
+
+
+
+      <table>
+        <tr>
+            <th> ID Barang </th>
+            <th> Nama Barang </th>
+            <th> Harga Barang </th>
+            <th> Jumlah Barang </th>
+        </tr>
+          {% for row in data %}
+          <tr>
+            <td>{{ row.0 }}</td>
+            <td>{{ row.1 }}</td>
+            <td>{{ row.2 }}</td>
+            <td>{{ row.3 }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5">tidak ada data lagi</td></tr>
+          {% endfor %}
+      </table>
+  </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>

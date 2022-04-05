@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/login.css">
+
+    <title>admin gudang gilang</title>
+    <style>
+   body {
+    background-color: 	#FAEBD7;
+   }
+ </style>
+  </head>
+  <body>
+
+
+
+    <div class="container">
+      <h4 class="text-center">PENDAFTARAN ADMIN</h4>
+      <p class="text-center">{{message}}</p>
+
+
+      <form action="" method="post">
+
+        <!--form ID-->
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" name="formID_daftar" id="formID_daftar" class="form-control" placeholder="Masukkan ID">
+
+        </div>
+        <!--form username-->
+        <br>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" name="formUsername_daftar" id="formUsername_daftar" class="form-control" placeholder="Masukkan username">
+          <br>
+        </div>
+
+        <!--form password-->
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="formPassword_daftar" id="formPassword_daftar" class="form-control" placeholder="Masukkan password">
+          <br>
+        </div>
+
+        <button type="submit" class="btn btn-primary">daftar</button>
+
+        <p class="text-center"><br>kembali ke halaman <a href="/login">login admin</a></p>
+
+      </form>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <<script type="text/javascript" src="../static/bootstrap/js/bootstrap.min.js"></script>
+
+    
+  </body>
+</html>

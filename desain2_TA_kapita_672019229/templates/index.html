@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/login.css">
+
+    <title>gudang gilang</title>
+    <style>
+   body {
+            background-color: 	#FAEBD7;
+        }
+   table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 20px 0;
+            width: 100%;
+         }
+
+   td,
+   th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px 10px;
+      }
+
+   tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+    </style>
+
+  </head>
+  <body class="px-5">
+
+
+  <div class="logout">
+      <br>
+    <div class="d-flex justify-content-between">
+        Selamat datang, {{ username }} {{message}}
+        <a class="btn btn-primary" id="btn-logout" href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <div class="container1">
+      <h4 class="text-center">HALAMAN GUDANG</h4>
+
+  <form action="" method="post">
+
+
+
+      <div class ="crud">
+        <a class="btn btn-primary" id ="btn-insert" href="insert">Insert</a>
+        <a class="btn btn-primary" id="btn-update" href="update">Update</a>
+        <a class="btn btn-danger" id="btn-delete" href="delete">Delete</a>
+      </div>
+
+
+
+  </form>
+      <table>
+        <tr>
+            <th> ID Barang </th>
+            <th> Nama Barang </th>
+            <th> Harga Barang </th>
+            <th> Jumlah Barang </th>
+        </tr>
+          {% for row in data %}
+          <tr>
+            <td>{{ row.0 }}</td>
+            <td>{{ row.1 }}</td>
+            <td>{{ row.2 }}</td>
+            <td>{{ row.3 }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5">tidak ada data lagi</td></tr>
+          {% endfor %}
+      </table>
+  </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>
